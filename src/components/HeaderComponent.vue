@@ -15,7 +15,7 @@ i
               </div>
               <h2 class="text-header-color text-3xl font-bold leading-tight tracking-[-0.015em]">Spodcast</h2>
             </div>
-            <div class="flex items-center gap-16 lg:gap-9">
+            <div class="flex items-center gap-8 lg:gap-9">
               <router-link to="/dashbord" class="text-header-color opacity-75 line-through text-lg font-medium leading-normal" >Dashbord</router-link>
               <router-link to="/favorite" class="text-header-color line-through opacity-75  text-lg font-medium leading-normal" >My list</router-link>
               <router-link to="/" class="text-header-color text-lg font-medium opacity-75  leading-normal" >Discover podcasts</router-link>
