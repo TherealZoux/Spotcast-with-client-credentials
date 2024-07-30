@@ -1,4 +1,4 @@
-i
+
 <template>
         <header class="flex flex-col lg:flex-row items-center fixed w-full bg-[#121212] z-10 justify-between whitespace-nowrap border-b border-solid border-b-[#292929] px-10 py-3">
           <div class="flex flex-col lg:flex-row items-center gap-4 lg:gap-16 ">
