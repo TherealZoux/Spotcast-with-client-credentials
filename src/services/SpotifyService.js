@@ -6,7 +6,7 @@ const accessToken = localStorage.getItem("access_token");
 
 export async function fetchcasts() {
   const url = "https://api.spotify.com/v1/shows"; // Spotify API endpoint for shows
-  const showIds = `0CpGmzJbjTBPOoDi5kj2Ah,
+  const showIds = `
 2HOihpetR3Fj3agsxhlWv9,
 4sKfeJ2gWjFrTuKWIz2VVe,
 4E5sExxn1PEvqJdMWmIGW3,
