@@ -1,7 +1,7 @@
 import { Buffer } from 'buffer';
 
 const client_id = 'f64ad8be70dd426fae602cfa7c877f5d';
-const client_secret = '56a031059c1f4961b319e0b57dacc0dc';
+const client_secret = 'f947485810f2428caa0957fe8f297842';
 
 const encodedCredentials = Buffer.from(`${client_id}:${client_secret}`).toString('base64');
 
