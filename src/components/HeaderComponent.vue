@@ -16,7 +16,7 @@
               <h2 class="text-header-color text-3xl font-bold leading-tight tracking-[-0.015em]">Spodcast</h2>
             </div >
         <v-btn v-if="screen " @click="menu = !menu" >
-                <span  class="mdi mdi-menu" v-if="menu === false""></span>
+                <span  class="mdi mdi-menu" v-if="menu === 'false'"></span>
                 <span class="mdi mdi-close" v-else></span>
         </v-btn>
             </div>
