@@ -1,6 +1,6 @@
 
 <template>
-  <section class="flex show-info mt-[10rem] flex-row gap-4  bg-gradient-to-r from-[#360033] to-[#0b8793] p-[2rem] rounded">
+  <section class="flex show-info mt-[4rem] flex-row gap-4  bg-gradient-to-r from-[#360033] to-[#0b8793] p-[2rem] rounded">
     <img :src="show.images[0].url" :width="show.images[0].width - 300" :height="show.images[0].height - 450" />
     <div class="flex flex-column justify-around">
       <span class="text-[#d9d9d9]">Podcast</span>
