@@ -79,7 +79,7 @@ setTimeout(()=>{
     flex-direction: column !important;
     padding:0;
     margin:0;
-    margin-top:10rem;
+    margin-top:4rem;
 
     img{
       width:100%;
