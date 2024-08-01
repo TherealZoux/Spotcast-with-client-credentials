@@ -32,7 +32,7 @@ setTimeout(()=>{
 
 
 
-<div class="w-ful h-[25rem] bg-[url('https://cdn.pixabay.com/photo/2020/10/01/14/20/donations-keeps-me-going-5618697_960_720.jpg')] bg-center bg-cover relative shadow-2xl shadow-blue-500/30 lg:mt-16 mt-[10rem] ">
+<div class="w-ful h-[25rem] bg-[url('https://cdn.pixabay.com/photo/2020/10/01/14/20/donations-keeps-me-going-5618697_960_720.jpg')] bg-center bg-cover relative shadow-2xl shadow-blue-500/30 lg:mt-16 mt-[4rem] ">
       <h2 class="absolute top-[22%] md:text-[6rem] md:top-[40%] pl-4 text-[5rem] lg:text-[7rem] tracking-[24px]  text-[#fff] ">Good Vibes</h2>
       <p class="absolute top-[77%] pl-8 text-[1rem] tracking-[2px]  text-[#fff] ">"The best time to plant a tree was 20 years ago. The second best time is now." – Chinese Proverb</p>
     </div>
