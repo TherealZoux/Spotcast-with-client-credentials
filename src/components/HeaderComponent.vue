@@ -1,8 +1,8 @@
-
 <template>
-        <header class="flex flex-col lg:flex-row items-center fixed w-full bg-[#121212] z-10 justify-between whitespace-nowrap border-b border-solid border-b-[#292929] px-10 py-3">
-          <div class="flex flex-col lg:flex-row items-center gap-4 lg:gap-16 ">
-            <div class="flex items-center justify-center gap-4 text-[#FFFFFF]">
+        <header class="flex flex-col md:flex-row items-center fixed w-full bg-[#121212] z-10 justify-between whitespace-nowrap border-b border-solid border-b-[#292929] px-10 py-3">
+          <div class="flex flex-col md:flex-row items-center w-full gap-4  lg:gap-16 ">
+            <div class="flex items-center justify-between w-full md:w-auto gap-4 text-[#FFFFFF]">
+              <div class="flex items-center w-full gap-3">
               <div class="size-4">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="1.4rem">
                   <path
@@ -14,15 +14,20 @@
                 </svg>
               </div>
               <h2 class="text-header-color text-3xl font-bold leading-tight tracking-[-0.015em]">Spodcast</h2>
+            </div >
+        <v-btn v-if="screen " @click="menu = !menu" ><span  class="mdi mdi-menu w-8"></span></v-btn>
             </div>
-                  <span v-if="windWidth.value < 670px" class="mdi mdi-menu"></span>
-            <div class="flex items-center gap-8 lg:gap-9">
+      <Transition name="fade">
+            <div class="flex items-center gap-8 lg:gap-9" v-if="menu">
               <router-link to="/dashbord" class="text-header-color opacity-75 line-through text-lg font-medium leading-normal" >Dashbord</router-link>
               <router-link to="/favorite" class="text-header-color line-through opacity-75  text-lg font-medium leading-normal" >My list</router-link>
               <router-link to="/" class="text-header-color text-lg font-medium opacity-75  leading-normal" >Discover podcasts</router-link>
             </div>
+        </Transition>
           </div>
-          <div class="flex flex-1 justify-end gap-8 mt-4 lg:mt-0 ">
+
+      <Transition name="fade">
+          <div class="flex flex-1 justify-end gap-8 mt-4 md:!mt-0 " v-if="menu">
             <label class="flex flex-col min-w-40 !h-10 max-w-64">
               <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
                 <div
@@ -45,19 +50,23 @@
                   />
               </div>
             </label>
-            <div
+             <div
               class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
               style='background-image: url("https://i.pinimg.com/736x/eb/66/07/eb6607a61a567cb61da9cff834e45165.jpg");'
             ></div>
           </div>
+      </Transition>
         </header>
 </template>
 
 <script setup>
   import {RouterLink} from 'vue-router'
-  import {ref} from "vue"
+  import {ref} from 'vue'
 
-        const windWidth = ref(window.innerWidth);
+  const screen = ref(window.innerWidth < 768 ? true:false);
+  console.log(screen.value)
+  const menu = ref(!screen.value);
+  
 </script>
 <style>
 input:focus{
@@ -92,10 +101,16 @@ a::after {
     margin-top: 0px !important;
   }
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+  
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
 </style>
-
-
-
-
-
 
