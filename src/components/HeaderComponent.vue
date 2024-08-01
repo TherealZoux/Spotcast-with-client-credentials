@@ -15,7 +15,10 @@
               </div>
               <h2 class="text-header-color text-3xl font-bold leading-tight tracking-[-0.015em]">Spodcast</h2>
             </div >
-        <v-btn v-if="screen " @click="menu = !menu" ><span  class="mdi mdi-menu w-8"></span></v-btn>
+        <v-btn v-if="screen " @click="menu = !menu" >
+                <span  class="mdi mdi-menu" v-if="menu === false""></span>
+                <span class="mdi mdi-close" v-else></span>
+        </v-btn>
             </div>
       <Transition name="fade">
             <div class="flex items-center gap-8 lg:gap-9" v-if="menu">
@@ -64,7 +67,6 @@
   import {ref} from 'vue'
 
   const screen = ref(window.innerWidth < 768 ? true:false);
-  console.log(screen.value)
   const menu = ref(!screen.value);
   
 </script>
