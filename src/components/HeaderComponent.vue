@@ -15,6 +15,7 @@
               </div>
               <h2 class="text-header-color text-3xl font-bold leading-tight tracking-[-0.015em]">Spodcast</h2>
             </div>
+                  <span v-if="window.width < 650px" class="mdi mdi-menu"></span>
             <div class="flex items-center gap-8 lg:gap-9">
               <router-link to="/dashbord" class="text-header-color opacity-75 line-through text-lg font-medium leading-normal" >Dashbord</router-link>
               <router-link to="/favorite" class="text-header-color line-through opacity-75  text-lg font-medium leading-normal" >My list</router-link>
