@@ -106,7 +106,7 @@ a::after {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1s;
+  transition: opacity 0.7s;
   
 }
 .fade-enter-from,
