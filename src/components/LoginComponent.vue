@@ -7,24 +7,7 @@
 </template>
 
 <script setup>
-import {ref, onMounted, onBeforeUnmount } from 'vue'
 import { authenticateWithSpotify } from "@/services/AuthService"
-import store from '../store'
-
-const userName = ref('');
-const error = ref('');
-
-const firstNameRules = [
-  value => {
-    if (value?.length > 3) return true
-    return 'First name must be at least 3 characters.'
-  },
-]
-
-if(localStorage.getItem('username')){
-  userName.value = localStorage.getItem('username');
-}
-
 
 
 </script>

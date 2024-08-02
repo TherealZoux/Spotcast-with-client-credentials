@@ -25,7 +25,7 @@
               <span class="mdi mdi-instagram text-[2rem]"></span>
             </div>
           </a>
-          <a href="https://www.instagram.com/this.moaz" target="_blank">
+          <a href="https://www.linkedin.com/in/therealzoux/" target="_blank">
             <div class="text-[#C4C4C4]" data-icon="LinkedinLogo" data-size="24px" data-weight="regular">
               <span class="mdi mdi-linkedin text-[2rem]"></span>
             </div>
