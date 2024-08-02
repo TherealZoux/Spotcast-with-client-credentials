@@ -10,7 +10,6 @@
 <script setup>
 import {  useRouter } from "vue-router";
 import { authenticateWithSpotify } from "@/services/AuthService"
-import store from '../store'
   
 const router = useRouter();
 if(localStorage.getItem('access_token') !== null){

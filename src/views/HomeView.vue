@@ -5,23 +5,17 @@ import {  useRouter } from "vue-router";
 const store = useStore();
 
 
-const shows = computed(()=> store.getters.shows);
+const shows = computed(()=>  store.getters.shows);
+const filteredShows = computed(()=> store.getters.filteredShows)
 const loading = ref(true);
-
-const error = computed(()=> store.getters.error);
 const screenWidth = ref(window.screen.width);
 
 const router = useRouter();
 
+
 if(localStorage.getItem('access_token') === null){
 	router.push('/login');
 }
-onMounted(  () => {
-
-  store.dispatch('fetchData');
-
-})
-
 setTimeout(()=>{
   loading.value = false
 },1000)
@@ -49,9 +43,9 @@ setTimeout(()=>{
       <div
         class="flex gap-4 sm:gap-6 flex-wrap justify-center items-center w-full pl-4 sm:pl-4  "
     >
+      
       <SpotCard
-	v-model="shows"
-        v-for="show in shows"
+        v-for="show in filteredShows"
         :key="show.id"
         :posterImg="show.images[0].url"
         :imageWidth="show.images[0].width"
@@ -71,4 +65,4 @@ setTimeout(()=>{
 }
 
 </style>
-
+i
