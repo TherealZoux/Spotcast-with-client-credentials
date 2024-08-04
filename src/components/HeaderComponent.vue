@@ -24,7 +24,7 @@
           </div>
           <router-link
             to="/"
-            class="text-header-color text-3xl font-bold leading-tight tracking-[-0.015em]"
+            class=" logo text-header-color text-3xl font-bold leading-tight tracking-[-0.015em]"
           >
             Spodcast
           </router-link>
@@ -131,6 +131,22 @@ a::after {
   transform-origin: bottom left;
   transition: transform 0.3s ease-in-out;
 }
+.logo{
+position: relative;
+}
+.logo::after {
+  content: "";
+  position: absolute;
+  left: 100% ;
+  top: 100%;
+  width: 0;
+  height: 0 !important;
+  background: #121212;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.3s ease-in-out;
+}
+
 
 /* Active link */
 .active-link::after {
