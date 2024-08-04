@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -47,4 +47,3 @@ html{
 
   font-style: normal;
 }
-

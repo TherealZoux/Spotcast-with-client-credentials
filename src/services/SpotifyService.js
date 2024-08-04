@@ -1,13 +1,12 @@
 import axios from "axios";
-import store from "@/store";
-import {authenticateWithSpotify} from './AuthService.js'
+import { authenticateWithSpotify } from "./AuthService.js";
 
 const accessToken = localStorage.getItem("access_token");
 
 export async function fetchcasts() {
   const url = "https://api.spotify.com/v1/shows"; // Spotify API endpoint for shows
   const showIds = `
-2Fo0jR0jf6E6PdEMCJTIMU,
+488S9IHjkNkQy8z3SxBaEo,
 5c6F2dkYH5T9MWA77W1Fe1,
 6sTl0ndvk5HRSLalsNtybj,
 5og74haQRULrM4UqbS8lMB,
@@ -21,6 +20,8 @@ export async function fetchcasts() {
 1q6P9hkN9wRM45lyAJWEvN,
 76esZhlGdSDNck2yFM35JF,
 1OUqDEV1Yw9xQY2YET1opb,
+32Za3jmqvPXx9PwXnMrlsU,
+69Y9V268b61lhMNSFyzC42,
 2HOihpetR3Fj3agsxhlWv9,
 4sKfeJ2gWjFrTuKWIz2VVe,
 4E5sExxn1PEvqJdMWmIGW3,
@@ -32,8 +33,7 @@ export async function fetchcasts() {
 4exVan3GUIuCRlzbxwtG1Q,
 7swxkecczFgxFuovnXIp5J,
 7o0MSC2dd94Cj21R6WCafa,
-32Za3jmqvPXx9PwXnMrlsU,
-69Y9V268b61lhMNSFyzC42,
+2Fo0jR0jf6E6PdEMCJTIMU,
 2KJgeJQvX45LVFBxIDGeuI,
 4QNgSGdfXHYRUZnvu03GQZ,
 1Vd8W8Gu7VGWNtYmN3pnou,
@@ -68,8 +68,6 @@ export async function fetchcasts() {
   }
 }
 
-
-
 export const fetchEpisodes = async (showId) => {
   const Id = showId;
   const url = `https://api.spotify.com/v1/shows/${Id}/episodes`;
@@ -82,20 +80,15 @@ export const fetchEpisodes = async (showId) => {
     return response.data;
   } catch (error) {
     console.log("Error fetching episodes", error);
-    authenticateWithSpotify()
+    authenticateWithSpotify();
   }
-}
+};
 
-export const userProfile = async () => {
-  const url = "https://api.spotify.com/v1/me";
-  try {
-    const response = await axios.get(url, {
-      headers: {
-        Authorization: "Bearer " + accessToken,
-      },
-    });
-    store.state.profile = response.data;
-  } catch (error) {
-    
-  }
+export async function fetchProfile() {
+  const result = await fetch("https://api.spotify.com/v1/me", {
+    method: "GET",
+    headers: { Authorization: `Bearer ${localStorage.getItem('access_token')}` },
+  });
+
+  return await result.json();
 }

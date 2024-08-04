@@ -1,21 +1,16 @@
 <template>
   <v-app>
-      <v-main>
-        <HeaderComponent />
-        <RouterView></RouterView>
-        <AppFooter />
-      </v-main>
+    <v-main class="flex flex-col justify-between">
+      <HeaderComponent />
+      <RouterView></RouterView>
+      <AppFooter />
+    </v-main>
   </v-app>
 </template>
 
 <script setup>
-import {  ref  } from "vue";
-import store from "./store";
-import {  RouterView } from "vue-router";
-
-const spin = ref(true);
-
-
+import { RouterView } from "vue-router";
+import HeaderComponent from "./components/HeaderComponent.vue"
 </script>
 <style scoped>
 a {
@@ -29,9 +24,7 @@ span {
   color: rgb(133, 133, 133);
 }
 
-*{
-    font-family: "Roboto", sans-serif;
-
+* {
+  font-family: "Roboto", sans-serif;
 }
-
 </style>
