@@ -1,32 +1,44 @@
 <template>
-  <v-app>
-    <v-layout>
-      <NavigationComponent />
-      <v-main>
-        <div class="h-full" v-if="spin">
-          <img src="./assets/spin.svg" class="bg-red m-auto mt-16" />
-        </div>
-
-        <RouterView></RouterView>
-      </v-main>
-    </v-layout>
+  <v-app v-if="!loading">
+    <v-main class="flex flex-col justify-between">
+      <HeaderComponent />
+      <RouterView></RouterView>
+      <AppFooter />
+    </v-main>
   </v-app>
+  <div v-else class="flex justify-center items-center m-20">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="200"
+      height="200" style="shape-rendering: auto; display: block; " xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g>
+        <circle stroke-linecap="round" fill="none" stroke-dasharray="50.26548245743669 50.26548245743669"
+          stroke="#71feac" stroke-width="8" r="32" cy="50" cx="50">
+          <animateTransform values="0 50 50;360 50 50" keyTimes="0;1" dur="1s" repeatCount="indefinite" type="rotate"
+            attributeName="transform"></animateTransform>
+        </circle>
+      </g>
+    </svg>
+  </div>
+
 </template>
 
 <script setup>
-import {  ref  } from "vue";
-import store from "./store";
-import {  RouterView } from "vue-router";
-import NavigationComponent from '@/components/NavigationComponent'
+import { RouterView } from "vue-router";
+import HeaderComponent from "./components/HeaderComponent.vue"
+import { computed, ref, onBeforeMount } from "vue";
+import { authenticateWithSpotify } from "@/services/AuthService"
+import { useStore } from "vuex";
+
+const store = useStore();
+
+const loading = false//computed(() => store.getters.loading);
 
 
-const spin = ref(true);
 
 
-setTimeout(()=>{
-  spin.value = false
-}, 1000)
 
+onBeforeMount(async () => {
+  //  await authenticateWithSpotify()
+})
 
 </script>
 <style scoped>
@@ -37,34 +49,12 @@ a {
 p {
   font-size: 22px;
 }
+
 span {
   color: rgb(133, 133, 133);
 }
-.card {
-  width: 176px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  height: 4rem;
-}
-*{
-    font-family: "Roboto", sans-serif;
 
-}
-
-.v-main{
---v-layout-left: 240px !important;
---v-layout-right: 0px !important;
---v-layout-top: 80px !important;
---v-layout-bottom: 0px !important;
-}
-
-@media screen and (max-width: 1280px){
-.v-main{
---v-layout-left: 0px !important;
---v-layout-right: 0px !important;
---v-layout-top: 60px !important;
---v-layout-bottom: 0px !important;
-}
+* {
+  font-family: "Roboto", sans-serif;
 }
 </style>
